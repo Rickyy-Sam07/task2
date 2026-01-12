@@ -246,34 +246,7 @@ export default function Admin() {
             </>
           )}
 
-          {/* Old Rating Distribution Card - Remove this */}
-          {analytics && false && (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-white rounded-lg shadow p-6">
-                <h3 className="text-gray-500 text-sm font-medium mb-2">Total Reviews</h3>
-                <p className="text-3xl font-bold text-gray-800">{analytics.total_reviews}</p>
-              </div>
-              <div className="bg-white rounded-lg shadow p-6">
-                <h3 className="text-gray-500 text-sm font-medium mb-2">Average Rating</h3>
-                <p className="text-3xl font-bold text-gray-800">
-                  {analytics.average_rating.toFixed(1)} ⭐
-                </p>
-              </div>
-              <div className="bg-white rounded-lg shadow p-6">
-                <h3 className="text-gray-500 text-sm font-medium mb-2">Rating Distribution</h3>
-                <div className="space-y-1 text-sm">
-                  {[5, 4, 3, 2, 1].map(rating => (
-                    <div key={rating} className="flex items-center justify-between">
-                      <span>{rating}⭐</span>
-                      <span className="font-semibold">
-                        {analytics.rating_distribution[`rating_${rating}` as keyof typeof analytics.rating_distribution]}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
+
 
           {/* Filter */}
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 mb-8 border border-gray-200">
